@@ -1,0 +1,90 @@
+.app-wrapper {
+	background-color: #f6f6f7;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #585558;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #585558;
+	width:90%;
+	margin-left: 5%;
+	height: 3rem;
+	background-color: #d9d3d3;
+	font-weight: 700;
+	position: relative;
+    z-index: 1;
+	-webkit-box-shadow: -5px 5px 20px 5px #959494;
+	box-shadow: -5px 5px 20px 5px #959494;
+}
+
+.body-wrapper {
+	display: flex;
+	background: #f6f6f7;
+}
+
+.ploter {
+	width: 70%;
+	height: auto;
+	margin: 2rem;
+	float: left;
+}
+
+.controls {
+	width: 30%; /* Width of the outside container */
+	float: right;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	margin-right: 2rem;
+}
+
+.function-selector {
+	display: flex;
+}
+
+.slidecontainer {
+    
+}
+
+.button {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.devider {
+	border-style: solid;
+	border-width: 0.5px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.subdevider {
+	border-style: solid;
+	border-width: 0.5px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-color: #bfbbbf;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 1rem; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+	margin-bottom: 2rem;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
