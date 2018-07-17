@@ -225,11 +225,11 @@ render() {
                 <div className="parameters">Filter parameters</div>
                 <div className="subdevider"/>
 					<div className="slidecontainer">
-						<label htmlFor="R">R = {this.state.kalmanParams.R}</label>
+						<label htmlFor="R">R(InterSystem Noise) = {this.state.kalmanParams.R}</label>
 						<input type="range" min="0" max="1" step="0.01" value={this.state.kalmanParams.R} className="slider" id="R" onChange={this.handleFilterParameters}/>
-						<label htmlFor="Q">Q = {this.state.kalmanParams.Q}</label>
+						<label htmlFor="Q">Q(Measured Noise) = {this.state.kalmanParams.Q}</label>
 						<input type="range" min="0" max="100" step="0.1" value={this.state.kalmanParams.Q} className="slider" id="Q" onChange={this.handleFilterParameters}/>
-						<label htmlFor="A">A = {this.state.kalmanParams.A}</label>
+						<label htmlFor="A">A(State Vector) = {this.state.kalmanParams.A}</label>
 						<input type="range" min="0" max="1" step="0.01" value={this.state.kalmanParams.A} className="slider" id="A" onChange={this.handleFilterParameters}/>
 						{/* <label htmlFor="B">B = {this.state.kalmanParams.B}</label>
 						<input type="range" min="0" max="100" step="0.01" value={this.state.kalmanParams.B} className="slider" id="B" onChange={this.handleFilterParameters}/> */}

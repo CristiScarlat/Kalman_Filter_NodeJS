@@ -62,27 +62,28 @@ router.get('/', (req, res, next) => {
 	}));
 });
 
-kalman = (data, kalmanParams) => {	
-	let Err = kalmanParams.Q;
-	let R = kalmanParams.R;
-	let Q = kalmanParams.Q;
-	let A = kalmanParams.A;
+kalman = (data, kalmanParams) => {		
+	let R = kalmanParams.R;//expected noise
+	let Q = kalmanParams.Q;//measured noise
+	let A = kalmanParams.A;//state vector
 	let y = NaN;
+	let Err = NaN;
 	let filtered = data.map(x => {
 	if (isNaN(y)) {
 		y = x;
 		Err = Q;
 	  } else {
-		//compute pred or estimating
-		let predX = A * y;
-		let predErr = ((A * Err) * A) + R;
+		//Calculate previous state and previous error in estimate
+		let prevX = A * y;
+		let prevErr = ((A * Err) * A) + R;
 
-		//compute Kalman gain
-		let K = predErr / (predErr  + Q);
+		//calculate Kalman Gain
+		let K = prevErr / (prevErr  + Q);
 
-		// Correction
-		Err = predErr - (K * predErr);
-		y = predX + K * (x -  predX);	
+		//Calculate new error in estimate
+		Err = prevErr - (K * prevErr);
+		//Calculate current estimate
+		y = prevX + K * (x -  prevX);	
 
 		//return filtered data	
 		return y;
